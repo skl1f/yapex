@@ -18,13 +18,14 @@ class ExParsingTest(unittest.TestCase):
         langs = ex.get_languages()
         self.assertTrue(LANGUAGE in langs)
 
-    def text_get_categories(self):
-        categories = get_categories(LANGUAGE)
+    def test_get_categories(self):
+        categories = ex.get_categories(LANGUAGE)
         self.assertEqual(categories[CATEGORY], CATEGORY_URL)
-
+    
     def test_list_categories(self):
         categories = ex.list_categories(LANGUAGE)
         self.assertTrue(len(categories) > 0)
+
 
 if __name__ == '__main__':
     unittest.main()
