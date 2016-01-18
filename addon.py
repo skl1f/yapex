@@ -1,3 +1,6 @@
+﻿#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import sys
 from urlparse import parse_qsl
 import xbmcgui
