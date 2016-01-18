@@ -2,9 +2,9 @@ import urllib2
 import xml.etree.ElementTree as ET
 
 def get_languages():
-    ```
+    '''
     return a dict with all awailable languages and with urls to rss
-    ```
+    '''
     page_url = 'http://www.ex.ua/rss/81708'
     items = dict()
     try:
