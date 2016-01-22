@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import unittest
+import os, sys, unittest
+sys.path.append(os.path.join(os.path.dirname(__file__), "resources/lib"))
 import ex
 
 LANGUAGE = 'EN'
 LANGUAGE_URL = 'http://www.ex.ua/rss/80925'
 CATEGORY = 'Movies'
-CATEGORY_URL = 'http://www.ex.ua/rss/82316'
+CATEGORY_URL = 'http://www.ex.ua/82316'
+VIDEOS_PER_PAGE = 200
+URL='http://www.ex.ua/ru/video/foreign_series?r=23775'
 
 class ExParsingTest(unittest.TestCase):
     def test_list_languages(self):
@@ -26,6 +29,9 @@ class ExParsingTest(unittest.TestCase):
         categories = ex.list_categories(LANGUAGE)
         self.assertTrue(len(categories) > 0)
 
+    def test_list_video(self):
+        videos = ex.list_videos(URL, VIDEOS_PER_PAGE)
+        self.assertEqual(len(videos), VIDEOS_PER_PAGE)
 
 if __name__ == '__main__':
     unittest.main()

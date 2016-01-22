@@ -1,0 +1,4 @@
+<settings>
+    <setting id="videos_per_page" value="200" />
+    <setting id="image_quality" value="400" />
+</settings>
