@@ -9,7 +9,6 @@ LANGUAGE = 'EN'
 LANGUAGE_URL = 'http://www.ex.ua/rss/80925'
 CATEGORY = 'Movies'
 CATEGORY_URL = 'http://www.ex.ua/82316'
-VIDEOS_PER_PAGE = 200
 URL='http://www.ex.ua/ru/video/foreign_series?r=23775'
 
 class ExParsingTest(unittest.TestCase):
@@ -30,8 +29,8 @@ class ExParsingTest(unittest.TestCase):
         self.assertTrue(len(categories) > 0)
 
     def test_list_video(self):
-        videos = ex.list_videos(URL, VIDEOS_PER_PAGE)
-        self.assertEqual(len(videos), VIDEOS_PER_PAGE)
+        videos = ex.list_videos(URL, ex.VIDEOS_PER_PAGE)
+        self.assertTrue(len(videos) > 0)
 
 if __name__ == '__main__':
     unittest.main()
